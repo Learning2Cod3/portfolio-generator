@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 const profileDataArgs = process.argv.slice(2, process.argv.length);
 const name = profileDataArgs[0]
 const github = profileDataArgs[1];
@@ -21,50 +23,8 @@ const generatePage = (userName, githubName) => {
     </html>
     `;
 };
-console.log(name, github);
-console.log(generatePage(name, github)); 
-
-const fs = require('fs');
-const inquirer = require('inquirer')
-const generateMarkdown = require('./utils/generateMarkdown');
-
-const questions = () => {
-    //using inquirer to prompt questions
-    return inquirer/prompt([
-        {
-            type: 'input', 
-            name: 'github',
-            message: 'What is your Github username?',
-            validate: nameInput => {
-                if (nameInput) {
-                    return ture;
-                    } else {
-                        console.log('Please enter your Github username!');
-                        return false;
-                    }
-            }
-        },
-        
-{
-    type: 'input',
-    name: 'email',
-    message: 'What is your email address?', 
-    validate: nameInput => {
-        if (nameInput) {
-        return true; 
-        } else {
-        console.log('Please enter a valid email address');
-        return false;
-       }
-    })
-}
-
-    const writeFile = data => {
-        fs.writeFile('README.md', data, err => {
-            if(err) {
-                return; 
-            } else {
-                console.log("Your README has been created.")
-                }
-            })
-        }
+fs.writeFile('index.html', generatePage(name, github), err => {
+    if (err) throw err;
+  
+    console.log('Portfolio complete! Check out index.html to see the output!');
+  });
