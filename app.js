@@ -23,6 +23,8 @@ const generatePage = (userName, githubName) => {
     </html>
     `;
 };
+
+// call to create index.html file
 fs.writeFile('index.html', generatePage(name, github), err => {
     if (err) throw err;
   
