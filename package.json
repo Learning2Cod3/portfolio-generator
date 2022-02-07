@@ -1,0 +1,22 @@
+{
+  "name": "portfolio-generator",
+  "version": "0.0.5",
+  "description": "Node Js practice run",
+  "main": "app.js",
+  "scripts": {
+    "test": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Learning2Cod3/portfolio-generator.git"
+  },
+  "author": "me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Learning2Cod3/portfolio-generator/issues"
+  },
+  "homepage": "https://github.com/Learning2Cod3/portfolio-generator#readme",
+  "dependencies": {
+    "inquirer": "^8.2.0"
+  }
+}
